@@ -1,0 +1,14 @@
+.navList {
+  display: flex;
+  gap: 32px;
+}
+
+.navItem {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.active {
+  color: var(--color-secondary-blue);
+}

@@ -1,0 +1,15 @@
+.header {
+  padding: 25px 120px;
+  display: flex;
+  justify-content: space-between;
+  /* position: fixed;
+  top: -70px; */
+}
+
+.white {
+  background-color: var(--color-white);
+}
+
+.gray {
+  background-color: var(--color-gray-lighter);
+}

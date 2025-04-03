@@ -1,2 +1,7 @@
 @import url("./styles/reset.css");
 @import url("./styles/variables.css");
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--color-primary-dark);
+}

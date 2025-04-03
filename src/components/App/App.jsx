@@ -12,19 +12,17 @@ const NotFoundPage = lazy(() =>
   import("../../pages/NotFoundPage/NotFoundPage.jsx")
 );
 
-function App() {
+export default function App() {
   return (
     <>
-      <Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/catalog" element={<CatalogPage />}></Route>
-          <Route path="/catalog/:carId" element={<CarDetailsPage />}></Route>
+          <Route path="/catalog/:id" element={<CarDetailsPage />}></Route>
           <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
       </Suspense>
     </>
   );
 }
-
-export default App;

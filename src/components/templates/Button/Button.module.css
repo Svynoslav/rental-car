@@ -1,0 +1,33 @@
+.catalog {
+  background-color: var(--color-primary-blue);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--color-white);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  padding: 12px 88px;
+  border-radius: 12px;
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.catalog:hover,
+.catalog:focus {
+  background-color: var(--color-secondary-blue);
+}
+
+.search {
+  background-color: var(--color-primary-blue);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--color-white);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  padding: 12px 51px;
+  border-radius: 12px;
+}
+.search:hover,
+.search:focus {
+  background-color: var(--color-secondary-blue);
+}
