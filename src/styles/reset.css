@@ -37,3 +37,9 @@ a {
   text-decoration: none;
   display: block;
 }
+
+select,
+input,
+textarea {
+  border: none;
+}

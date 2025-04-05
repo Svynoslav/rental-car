@@ -1,15 +1,13 @@
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
-const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
-const CatalogPage = lazy(() =>
-  import("../../pages/CatalogPage/CatalogPage.jsx")
-);
+const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
+const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage.jsx"));
 const CarDetailsPage = lazy(() =>
-  import("../../pages/CarDetailsPage/CarDetalisPage.jsx")
+  import("./pages/CarDetailsPage/CarDetalisPage.jsx")
 );
 const NotFoundPage = lazy(() =>
-  import("../../pages/NotFoundPage/NotFoundPage.jsx")
+  import("./pages/NotFoundPage/NotFoundPage.jsx")
 );
 
 export default function App() {

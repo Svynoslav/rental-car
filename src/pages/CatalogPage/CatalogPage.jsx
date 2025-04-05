@@ -1,13 +1,16 @@
 import Header from "../../components/Header/Header";
-import SearchBtn from "../../components/catalogPage/SearchForm/SearchBtn/SearchBtn";
+import SearchForm from "../../components/catalogPage/SearchForm/SearchForm";
+import CarList from "../../components/catalogPage/CarList/CarList";
+import LoadBtn from "../../components/catalogPage/LoadBtn/LoadBtn";
 
 export default function CatalogPage() {
   return (
     <>
       <Header variant="gray" />
       <main>
-        <p>Catalog Page</p>
-        <SearchBtn />
+        <SearchForm />
+        <CarList />
+        <LoadBtn />
       </main>
     </>
   );

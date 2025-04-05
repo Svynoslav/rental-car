@@ -1,0 +1,13 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+.item {
+  width: 276px;
+  position: relative;
+}

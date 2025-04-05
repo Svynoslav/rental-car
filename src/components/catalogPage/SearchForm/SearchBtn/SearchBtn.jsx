@@ -1,5 +1,5 @@
-import Button from "../../../templates/Button/Button";
+import ButtonTemp from "../../../templates/ButtonTemp/ButtonTemp";
 
 export default function SearchBtn() {
-  return <Button variant="search">Search</Button>;
+  return <ButtonTemp variant="search">Search</ButtonTemp>;
 }

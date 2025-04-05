@@ -1,5 +1,5 @@
 import Header from "../../components/Header/Header";
-import CatalogBtn from "../../components/homePage/CatalogBtn/CatalogBtn";
+import CatalogLink from "../../components/homePage/CatalogLink/CatalogLink";
 
 import css from "./HomePage.module.css";
 
@@ -14,7 +14,7 @@ export default function HomePage() {
             Reliable and budget-friendly rentals for any journey
           </p>
         </div>
-        <CatalogBtn />
+        <CatalogLink />
       </main>
     </>
   );
