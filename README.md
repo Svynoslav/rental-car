@@ -1,12 +1,50 @@
-# React + Vite
+# Car Rental Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Опис проекту
 
-Currently, two official plugins are available:
+**Car Rental Platform** — це веб-додаток, що дозволяє користувачам переглядати доступні автомобілі для оренди, здійснювати пошук за різними фільтрами та бронювати автомобілі онлайн. Проект створено з використанням React та Redux для управління станом, а також включає бекенд API для отримання даних про автомобілі.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Основні функції
 
-## Expanding the ESLint configuration
+- **Перегляд автомобілів**: Користувачі можуть переглядати доступні автомобілі з деталізованою інформацією про кожен з них.
+- **Фільтрація автомобілів**: Можливість фільтрувати автомобілі за брендом, ціною та пробігом.
+- **Пагінація**: Завантаження автомобілів відбувається частинами (пагінація) для кращого користувацького досвіду.
+- **Улюблене**: Можливість позначити автомобіль як "улюблений" за допомогою сердечка на його картці.
+- **Бронювання автомобілів**: Користувачі можуть заповнити форму бронювання з обов'язковими полями для імені, електронної пошти та дати бронювання.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Інструкції з установки та використання
+
+### Вимоги
+
+- Node.js (v14 або новішої версії)
+- npm або yarn
+
+### Установка
+
+1. Клонуйте репозиторій:
+   ```bash
+   git clone https://github.com/Svynoslav/rental-car.git
+   ```
+2. Перейдіть до каталогу проекту:
+   cd car-rental-platform
+3. Встановіть залежності:
+   npm install
+   або
+   yarn install
+4. Запустіть проект:
+   npm start
+   або
+   yarn start
+
+### Використання
+
+1.  Відкрийте браузер та перейдіть за адресою http://localhost:3000.
+2.  Використовуйте форму для фільтрації автомобілів та перегляду доступних варіантів.
+3.  Натискайте кнопку "Load more" для завантаження додаткових автомобілів.
+4.  Натискайте на іконку із сердечком, щоб додати автомобіль до списку улюблених.
+5.  Перейдіть на сторінку автомобіля, що вам сподобався, за допомогою кнопки "Read more".
+6.  Заповніть форму бронювання для вибраного автомобіля.
+
+## Автор
+
+Проект створено Тимуром Омелюженко — веб-розробником з досвідом у створенні сучасних веб-додатків. Всі запитання та пропозиції можна надсилати через GitHub.
