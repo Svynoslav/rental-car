@@ -20,6 +20,8 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
+  outline: none;
+  height: 44px;
 }
 .field::placeholder {
   color: var(--color-primary-dark);
@@ -29,13 +31,25 @@
 .fieldPrice {
   padding: 12px 0px 12px 16px;
   border-radius: 12px;
+  appearance: none;
 }
+
 .fieldBrand {
   width: 204px;
 }
 
 .fieldPrice {
   width: 196px;
+}
+
+.fieldBrand option,
+.fieldPrice option {
+  background-color: var(--color-white);
+  color: var(--color-primary-dark);
+}
+.fieldBrand option:hover,
+.fieldPrice option:hover {
+  font-size: 50px;
 }
 
 .mileageWrap {

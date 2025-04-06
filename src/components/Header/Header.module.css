@@ -6,6 +6,10 @@
   top: -70px; */
 }
 
+.logo {
+  align-self: center;
+}
+
 .white {
   background-color: var(--color-white);
 }

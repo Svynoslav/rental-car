@@ -1,6 +1,16 @@
-import ReadLink from "./ReadLink/ReadLink";
+import { useDispatch, useSelector } from "react-redux";
 
+import ReadLink from "./ReadLink/ReadLink";
 import css from "./CarCard.module.css";
+
+import formatMileage from "../../../../utils/formatMileage";
+import parseAddress from "../../../../utils/parseAddress";
+
+import {
+  addFavorite,
+  removeFavorite,
+  selectFavoriteCars,
+} from "../../../../redux/favouriteSlice";
 
 export default function CarCard({
   car: {
@@ -17,22 +27,28 @@ export default function CarCard({
     mileage,
   },
 }) {
-  function parseAddress(address) {
-    const parts = address.split(",");
-    const city = parts[parts.length - 2]?.trim();
-    const country = parts[parts.length - 1]?.trim();
+  const dispatch = useDispatch();
+  const favoriteCars = useSelector(selectFavoriteCars);
+  const isFavorite = favoriteCars.includes(id);
 
-    return `${city} | ${country}`;
-  }
-  function parseMileage(mileage) {
-    const string = mileage.toString();
-    return string.length > 1 ? string[0] + " " + string.slice(1) : string;
-  }
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFavorite(id));
+    } else {
+      dispatch(addFavorite(id));
+    }
+  };
 
   return (
     <>
       <img src={img} alt={description} className={css.img} />
-      <img src="/heart-empty.svg" className={css.favourite} />
+      <img
+        src={isFavorite ? "/heart-full.svg" : "/heart-empty.svg"}
+        className={css.favourite}
+        width="16"
+        height="16"
+        onClick={toggleFavorite}
+      />
       <div className={css.textWrap}>
         <p className={css.textMain}>
           {brand} <span className={css.textBlue}>{model}</span>, {year}
@@ -40,8 +56,8 @@ export default function CarCard({
         <p className={css.textMain}>${rentalPrice}</p>
       </div>
       <p className={css.textSecondary}>
-        {parseAddress(address)} | {rentalCompany} |<br />
-        {type} | {parseMileage(mileage)} km
+        {parseAddress(address, " |")} | {rentalCompany} |<br />
+        {type} | {formatMileage(mileage, " ")} km
       </p>
       <ReadLink id={id} />
     </>

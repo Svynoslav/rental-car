@@ -1,0 +1,91 @@
+.main {
+  display: flex;
+  gap: 72px;
+  justify-content: center;
+  padding-top: 84px;
+}
+
+.detailsWrap {
+  padding-top: 20px;
+}
+
+/* * ================== */
+.img {
+  border-radius: 18px;
+  width: 640px;
+  margin-bottom: 40px;
+}
+
+.titleWrap {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.id {
+  color: var(--color-secondary-dark);
+  align-self: flex-end;
+}
+
+.locationMileageWrap {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.locationSvg {
+  margin-right: 4px;
+  align-self: center;
+}
+
+.address {
+  margin-right: 16px;
+}
+
+.price {
+  color: var(--color-primary-blue);
+  margin-bottom: 32px;
+}
+
+.description {
+  max-width: 488px;
+  margin-bottom: 68px;
+}
+
+.specsList {
+  display: flex;
+  flex-direction: column;
+  gap: 110px;
+}
+
+.specsTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+.specsDescList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.specsDescItem {
+  display: flex;
+  gap: 8px;
+}
+.specsDescItem img {
+  align-self: center;
+}

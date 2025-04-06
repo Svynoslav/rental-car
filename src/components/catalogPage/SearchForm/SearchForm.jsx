@@ -1,17 +1,20 @@
 import { Formik, Form, Field } from "formik";
-import { useId, useState, useEffect } from "react";
-import axios from "axios";
+import { useId, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import clsx from "clsx";
-// import { useSelector } from "react-redux";
-// import { useDispatch } from "react-redux";
-// import { setStatusFilter } from "../../../redux/actions";
 
 import SearchBtn from "./SearchBtn/SearchBtn";
-
+import FormattedField from "../../templates/FormattedField/FormattedField";
 import css from "./SearchForm.module.css";
 
+import { fetchBrands } from "../../../redux/brandsOps";
+import { selectBrands } from "../../../redux/brandsSlice";
+import { changeFilter, clearFilters } from "../../../redux/filtersSlice";
+import { fetchCars } from "../../../redux/carsOps";
+import { clearCars } from "../../../redux/carsSlice";
+
 const initialValues = {
-  carBrand: "BMW",
+  brand: "",
   price: "",
   mileageFrom: "",
   mileageTo: "",
@@ -23,21 +26,24 @@ export default function SearchForm() {
   const mileageFromFieldId = useId();
   const mileageToFieldId = useId();
 
-  // const dispatch = useDispatch();
-  // const filter = useSelector((state) => state.filters.status);
-  // const handleFilterChange = (filter) => dispatch(setStatusFilter(filter));
-
-  const [brands, setBrands] = useState([]);
+  const dispatch = useDispatch();
+  const brands = useSelector(selectBrands);
 
   useEffect(() => {
-    axios
-      .get("https://car-rental-api.goit.global/brands")
-      .then((res) => setBrands(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+    dispatch(fetchBrands());
+    dispatch(fetchCars({}));
+  }, [dispatch]);
 
   const handleSubmit = (values, actions) => {
-    console.log(values);
+    dispatch(clearFilters());
+    dispatch(clearCars());
+
+    for (const [field, value] of Object.entries(values)) {
+      dispatch(changeFilter({ field, value }));
+    }
+
+    dispatch(fetchCars(values));
+
     actions.resetForm();
   };
 
@@ -55,7 +61,7 @@ export default function SearchForm() {
             placeholder="Choose a brand"
             className={clsx(css.field, css.fieldBrand)}
           >
-            <option value="" disabled selected hidden>
+            <option value="" disabled hidden>
               Choose a brand
             </option>
             {brands.map((brand) => (
@@ -77,7 +83,7 @@ export default function SearchForm() {
             placeholder="Choose a price"
             className={clsx(css.field, css.fieldPrice)}
           >
-            <option value="" disabled selected hidden>
+            <option value="" disabled hidden>
               Choose a price
             </option>
             <option value="30">30</option>
@@ -94,20 +100,18 @@ export default function SearchForm() {
             Car mileage / km
           </label>
           <div className={css.mileageWrap}>
-            <Field
-              type="number"
+            <FormattedField
+              placeholder="From"
               name="mileageFrom"
               id={mileageFromFieldId}
-              placeholder="From"
               className={clsx(css.field, css.fieldMileageFrom)}
-            ></Field>
-            <Field
-              type="number"
+            />
+            <FormattedField
+              placeholder="To"
               name="mileageTo"
               id={mileageToFieldId}
-              placeholder="To"
               className={clsx(css.field, css.fieldMileageTo)}
-            ></Field>
+            />
           </div>
         </div>
 

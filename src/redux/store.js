@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-
-const initialState = null;
-
-const rootReducer = (state = initialState, action) => {
-  console.log(action);
-  return state;
-};
+import { carsReducer } from "./carsSlice";
+import { filterReducer } from "./filtersSlice";
+import { brandsReducer } from "./brandsSlice";
+import { favoritesReducer } from "./favouriteSlice";
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    cars: carsReducer,
+    filters: filterReducer,
+    brands: brandsReducer,
+    favorites: favoritesReducer,
+  },
 });

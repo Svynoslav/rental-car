@@ -1,19 +1,12 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-
-import css from "./CarList.module.css";
+import { useSelector } from "react-redux";
 
 import CarCard from "./CarCard/CarCard";
+import css from "./CarList.module.css";
+
+import { selectCars } from "../../../redux/carsSlice";
 
 export default function CarList() {
-  const [cars, setCars] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://car-rental-api.goit.global/cars")
-      .then((res) => setCars(res.data.cars))
-      .catch((err) => console.log(err));
-  }, []);
+  const cars = useSelector(selectCars);
 
   return (
     <ul className={css.list}>
